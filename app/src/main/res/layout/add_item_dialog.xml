@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="16dp">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:text="Add TODO"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:background="@color/colorPrimary" />
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Task Title"
+            android:textSize="24sp"
+            android:id="@+id/taskName_et"
+            android:layout_marginHorizontal="10dp"
+            />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:ems="10"
+            android:hint="Description"
+            android:id="@+id/descriptonet"
+            android:textSize="24sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="10dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/addBtn"
+            android:text="Add Task"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/circular_button"
+            android:layout_gravity="center"
+            android:ems="5"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
