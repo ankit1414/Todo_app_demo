@@ -2,13 +2,10 @@ package com.example.todoapp
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.GradientDrawable
-import com.example.todoapp.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
-import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -66,13 +63,9 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
 
     // function to generate custom alert dialog
     fun customAlertDialog() {
-        val mydialog: AlertDialog.Builder = AlertDialog.Builder(this)
-        val inflater = LayoutInflater.from(this)
-        val myview: View = inflater.inflate(R.layout.add_item_dialog, null)
-        val dialog: AlertDialog = mydialog.create()
-        dialog.setView(myview)
-        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.show()
+        val dialog = getDialog()
+        val myview: View = this.layoutInflater.inflate(R.layout.add_item_dialog, null)
+        setupDialog(dialog, myview)
 
         val type_et: TextInputEditText = myview.findViewById(R.id.taskName_et)
         val description_et: TextInputEditText = myview.findViewById(R.id.descriptonet)
@@ -90,6 +83,18 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
         }
     }
 
+    private fun getDialog(): AlertDialog {
+        val mydialog: AlertDialog.Builder = AlertDialog.Builder(this)
+        val inflater = LayoutInflater.from(this)
+        val dialog: AlertDialog = mydialog.create()
+        return dialog
+    }
+
+    private fun setupDialog(dialog: AlertDialog, myview: View) {
+        dialog.setView(myview)
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.show()
+    }
 
     fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT)
