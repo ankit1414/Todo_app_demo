@@ -1,4 +1,4 @@
-package com.example.todoapp
+package com.example.todoapp.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todoapp.ItemClickListener
+import com.example.todoapp.R
 import com.example.todoapp.db.TodoListItem
 
 class TodoListAdapter(private val itemClickListener: ItemClickListener):  RecyclerView.Adapter<TodoListAdapter.TodoItemViewHolder>(){

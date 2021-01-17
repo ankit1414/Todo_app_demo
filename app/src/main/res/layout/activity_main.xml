@@ -46,7 +46,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:visibility="gone"
+        android:visibility="visible"
         android:id="@+id/home_recylerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
